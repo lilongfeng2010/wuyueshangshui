@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:elevation="10dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:padding="13dp">
+
+        <TextView
+            android:id="@+id/cardview_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="元新康复中心(鼓东一号)"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/font_16"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/cardview_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            tools:text="待审核"
+            android:textSize="@dimen/font_15"
+            android:textColor="@color/gray_pressed"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/dashline"
+        android:layerType="software"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_item_horizontal_height">
+
+            <TextView
+                android:id="@+id/card_item_object_head"
+                android:text="服务对象:"
+                style="@style/cardview_item_text" />
+
+            <TextView
+                android:id="@+id/cardview_item_name"
+                android:layout_toRightOf="@id/card_item_object_head"
+                android:layout_marginLeft="10dp"
+                tools:text="野比大雄"
+                style="@style/cardview_item_text" />
+        </RelativeLayout>
+
+        <include layout="@layout/line_1dp_2"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_item_horizontal_height">
+
+            <TextView
+                android:id="@+id/card_item_time_head"
+                android:text="服务时间:"
+                style="@style/cardview_item_text" />
+
+            <TextView
+                android:id="@+id/cardview_item_time"
+                android:layout_toRightOf="@id/card_item_time_head"
+                android:layout_marginLeft="10dp"
+                tools:text="2020.12.12  12:12"
+                style="@style/cardview_item_text" />
+        </RelativeLayout>
+
+        <include layout="@layout/line_1dp_2"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_item_horizontal_height">
+
+            <TextView
+                android:id="@+id/card_item_address_head"
+                android:text="服务方式:"
+                style="@style/cardview_item_text" />
+
+            <TextView
+                android:id="@+id/cardview_item_style"
+                android:layout_toRightOf="@id/card_item_address_head"
+                android:layout_marginLeft="10dp"
+                tools:text="到店"
+                style="@style/cardview_item_text" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/line_1dp_2"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/cardview_item_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:padding="5dp"
+                android:clickable="true"
+                android:background="@drawable/cancel_button_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/cancel_order"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_15"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="60dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/family_recycler_item_bg"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/family_recycler_item_image"
+        android:layout_width="@dimen/family_recycler_item_image_height"
+        android:layout_height="@dimen/family_recycler_item_image_height" />
+
+    <TextView
+        android:id="@+id/family_recycler_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="middle"
+        tools:text="测试数据"
+        />
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ListItem">
+        <attr name="itemIcon" format="reference"/>
+        <attr name="itemTitle" format="string"/>
+        <attr name="itemBind" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="ListItem1">
+        <attr name="itemIcon1" format="reference"/>
+        <attr name="itemTitle1" format="string"/>
+        <attr name="itemContent1" format="string"/>
+        <attr name="itemArrowShow" format="boolean"/>
+        <attr name="itemBind1" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ListItem2">
+        <attr name="itemIcon2" format="reference"/>
+        <attr name="itemTitle2" format="string"/>
+        <attr name="itemContent2" format="string"/>
+        <attr name="itemBind2" format="string"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/PointOutTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提示"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/twoButtonTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PointOutTV"
+        android:textSize="@dimen/font_15"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        tools:text="你好"
+        />
+    <View
+        android:id="@+id/line1"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/twoButtonTV"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_text"
+        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/TwoButtonNegative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold"
+            android:textColor="@color/wechat_login_button"
+            android:layout_centerHorizontal="true"
+            />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_text"
+            />
+
+        <com.wuyueshangshui.yuanxinkangfu.wigdet.MyPositionView
+            android:id="@+id/TwoButtonPosition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="确定"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold"
+            android:textColor="@color/gray_text"
+            android:layout_centerHorizontal="true"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

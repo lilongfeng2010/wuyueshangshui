@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/myfamily_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/myfamily_icon" />
+
+        <TextView
+            android:id="@+id/family_listitem_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/myfamily_icon"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_14"
+            tools:text="幸福小区" />
+    </RelativeLayout>
+
+    <include layout="@layout/line_1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/family_listitem_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <include layout="@layout/line_1dp" />
+
+    <RelativeLayout
+        android:id="@+id/family_listitem_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="查看详情"
+            android:textColor="@color/wechat_login_button"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>

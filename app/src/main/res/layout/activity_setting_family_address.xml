@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting_family_address"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/graybackground"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.SettingFamilyAddressActivity">
+
+    <include layout="@layout/all_title_text_backimg"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="@dimen/login_edittext_margin"
+        android:layout_marginRight="@dimen/login_edittext_margin"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/setting_family_community_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_14"
+            android:hint="@string/please_input_community_name"
+            />
+        <ImageView
+            android:id="@+id/setting_family_address_delete_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:src="@drawable/delete_edit_login_black"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="@dimen/login_edittext_margin"
+        android:layout_marginRight="@dimen/login_edittext_margin"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/setting_family_address_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_14"
+            android:hint="@string/please_input_address"
+            />
+        <ImageView
+            android:id="@+id/setting_family_address_delete_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:src="@drawable/delete_edit_login_black"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/setting_family_address_submit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/login_button_margin"
+        android:layout_marginRight="@dimen/login_button_margin"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="@drawable/button_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

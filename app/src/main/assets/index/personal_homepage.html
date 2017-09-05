@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="name" content="content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="icon" href="images/logo_top.png">
+  <link rel="stylesheet" type="text/css" href="css/weui.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/rili.css">
+  <link rel="stylesheet" type="text/css" href="css/my.css">
+  <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+  <script src="js/jquery-weui.js" type="text/javascript"></script>
+  <style>
+    .img_box{
+      background-color: rgba(0,0,0,.8)!important;
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap:wrap;
+      flex-wrap: wrap;
+      flex-flow: column;
+      -webkit-flex-flow:column;
+      align-content: space-between;
+      -webkit-align-content:space-between;
+    }
+    .weui_icon_cancel:before {
+    color: rgba(255,255,255,.3);
+    font-size: 30px;
+}
+  </style>
+</head>
+<title>个人主页</title>
+<body>
+<div class="body_con">
+  <div class="top_con">
+    <a href="index.html"  class="top_left"><span class="top_jiantou"></span></a>
+    <div class="top_center"><p>个人主页</p></div>
+    <a href="" class="top_right"><span class="red_text">&nbsp;</span></a>
+  </div>
+  <div class="con">
+    <div class="weui_cells">
+      <a href="javascript:;" class="weui_cell list_height open-popup" data-target="#tx_img" >
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>头像</p>
+        </div>
+        <div class="weui_cell_ft upLoad_btn">
+          <img src="images/tx.jpg" class="touxiangicon" id="tx">
+        </div>
+      </a>
+      <div class="weui_cell list_height">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>用户ID：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <p class="gary_text">10000090</p>
+        </div>
+      </div>
+    </div>
+    <div id="tx_img" class='weui-popup-container'>
+     <div class="weui-popup-overlay"></div>
+      <div class="weui-popup-modal img_box close-popup">
+        <img src="images/tx.png" style="width: 100%;">
+        <a href="javascript:;" class="close-popup" style="width: 100%; text-align: center; margin-top: 30px;"><i class="weui_icon_cancel"></i></a>
+      </div>
+    </div>
+    <div class="weui_cells">
+      <a href="javascript:;" class="weui_cell list_height open-popup weui_cells_access" data-target="#name">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>姓名：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <input id="name2" value="" style="border: none; color:#999; text-align: right; outline:none;" readonly>
+        </div>
+      </a>
+      
+      <a href="javascript:;" class="weui_cell list_height open-popup weui_cells_access" data-target="#sfzh">
+        <div class="weui_cell_bd ">
+          <p>身份证号：</p>
+        </div>
+        <div class="weui_cell_ft weui_cell_primary">
+          <input id="sfz1" value="" style="border: none; color:#999; text-align: right; outline:none;" readonly>
+        </div>
+      </a>
+      
+      <div class="weui_cell list_height">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p>性别：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <span style="margin-right: 16px;">男</span>
+        </div>
+      </div>
+      <div class="weui_cell list_height">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="">年龄：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <span style="margin-right: 16px;">25</span>
+        </div>
+      </div>
+      <div class="weui_cell list_height weui_cells_access">
+        <div class="weui_cell_bd ">
+          <p class="">职业:</p>
+        </div>
+        <div class="weui_cell_ft weui_cell_primary">
+          <input type="text" id='job' class="inputtext" />
+        </div>
+      </div>
+    </div>
+    <div class="weui_cells">
+      <a class="weui_cell weui_cells_access list_height" href="set_phone.html">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="">修改手机号：</p>
+        </div>
+        <div class="weui_cell_ft">
+        </div>
+      </a>
+      <a class="weui_cell weui_cells_access list_height" href="javascript:;">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="">微信绑定：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <span>去绑定</span>
+        </div>
+      </a>
+      
+      <a class="weui_cell weui_cells_access list_height" href="set_pw.html">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="">密码管理：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <span>设置密码</span>
+        </div>
+      </a>
+      <a class="weui_cell weui_cells_access list_height" href="address.html">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="">地址管理：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <span></span>
+        </div>
+      </a>
+      <a class="weui_cell weui_cells_access list_height" href="yijianfankui.html">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="">意见反馈：</p>
+        </div>
+        <div class="weui_cell_ft">
+          <span></span>
+        </div>
+      </a>
+    </div>
+    <div class="btnbox">
+      <button type="button" class="waves weui_btn_plain_blue waves" style="background: #fafafa; width: 100%;">退出登录</button>
+    </div>
+  </div>
+  <div id="name" class='weui-popup-container'>
+     <div class="weui-popup-overlay"></div>
+      <div class="weui-popup-modal">
+        <div class="top_con">
+          <a href="javascript:;"  class="top_left"><span>&nbsp;</span></a>
+          <div class="top_center"><p>填写姓名</p></div>
+          <a href="" class="top_right"><span class="bluetext">关闭</span></a>
+        </div>
+        <div class="weui_cells" style="margin-top: 20px;">
+          <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label" style="width: 80px;">姓名：</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+              <input class="weui_input" type="text" placeholder="请输入您的姓名" id="name1">
+            </div>
+          </div>
+        </div>
+        <div class="btnbox">
+          <button class=" weui_btn_blue btn close-popup waves" id="namebtn">确定</button>
+        </div>
+      </div>
+    </div>
+    <div id="sfzh" class='weui-popup-container'>
+     <div class="weui-popup-overlay"></div>
+      <div class="weui-popup-modal">
+        <div class="top_con">
+          <a href="javascript:;"  class="top_left"><span style="color: #f26353;">&nbsp;</span></a>
+          <div class="top_center"><p>填写身份证号</p></div>
+          <a href="" class="top_right"><span class="bluetext">关闭</span></a>
+        </div>
+        <div class="weui_cells" style="margin-top: 20px;">
+          <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label" style="width: 100px;">身份证号：</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+              <input class="weui_input" type="tel" id="sfzhm" placeholder="请输入您的身份证号" value="">
+            </div>
+          </div>
+        </div>
+        <div class="btnbox">
+          <button class="weui_btn_blue btn close-popup waves" id="sfzbtn">确定</button>
+        </div>
+      </div>
+    </div>
+  <script>
+    $("#job").picker({
+      title: "请选择您的职业",
+      cols: [
+      {
+        textAlign: 'center',
+        values: ['销售', '外贸', '公关/市场', '财务', '人力资源/行政', '秘书/翻译/法务', '物流/采购', '运营/研发/工程/项目管理','建筑/房地产','互联网／it','咨询业','金融业','传媒/文化艺术','科研人员/教师','零售业运营','旅游/休闲场所','医生/护理','公务员','高层管理（副总以上）/首席代表','创业/自由职业者','其他']
+      }
+      ]
+    });
+  </script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $("#sfzbtn").click(function(){
+          $("#sfz1").val($('#sfzhm').val())
+        });
+        $("#namebtn").click(function(){
+          $("#name2").val($('#name1').val())
+        });
+      });    
+  </script>
+  </div>
+</body>
+<script src="js/btn_xiaoguo.js"></script>
+</html>

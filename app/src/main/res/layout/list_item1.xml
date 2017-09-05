@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@drawable/list_item_bg">
+
+    <View
+        android:id="@+id/list_item1_icon"
+        android:layout_width="@dimen/list_item_image_height"
+        android:layout_height="@dimen/list_item_image_height"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_centerVertical="true"
+        />
+
+    <LinearLayout
+        android:layout_toRightOf="@id/list_item1_icon"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:paddingRight="@dimen/margin_15"
+        >
+
+        <TextView
+            android:id="@+id/list_item1_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            tools:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_15"
+            />
+
+        <TextView
+            android:id="@+id/list_item1_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="幸福老家"
+            />
+
+        <View
+            android:id="@+id/list_item1_arrow"
+            android:layout_width="@dimen/arrow_height"
+            android:layout_height="@dimen/arrow_height"
+            android:background="@drawable/user_home_arrow"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

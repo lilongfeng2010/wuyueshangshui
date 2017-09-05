@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="name" content="content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="icon" href="images/logo_top.png">
+  <link rel="stylesheet" type="text/css" href="css/weui.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/rili.css">
+  <link rel="stylesheet" type="text/css" href="css/my.css">
+  <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+  <script src="js/jquery-weui.js" type="text/javascript"></script>
+  
+</head>
+<title>优惠券</title>
+<body>
+<div class="body_con">
+	<div class="top_con">
+		<a href="pay.html"  class="top_left"><span class="top_jiantou"></span></a>
+		<div class="top_center"><p>选择优惠券</p></div>
+	</div>
+	<div class="con">
+		<div class="yhqbox">
+
+			<label for="2" class="yhq_body">
+				<div class="yhq_lefta_border"></div>
+				<div class="yhq_left_yuan">
+					<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+				</div>
+				<div class="yhq_left_textbox">
+					<p class="yhq_lefta_title"><span class="fuhao">￥</span>100</p>
+					<p class="yhq_left_text">满100减100</p>
+					<p class="yhq_lefta_text_b">自用券</p>
+				</div>
+				<div class="yhq_middle">
+					<div class="yhq_middle_yuan"></div>
+					<div class="yhq_middle_line"></div>
+					<div class="yhq_middle_yuan1"></div>
+				</div>
+				<div class="yhq_right">
+					<p class="yhq_right_title">海峡联合康养中心</p>
+					<p class="yhq_right_text">2016.11.11-2016.12.12可用</p>
+				</div>
+				<div class="danxuanbox">
+					<img src="images/xuanzhong.png" width="70">
+				</div>
+				
+			</label>
+
+			<label for="1" class="yhq_body">
+				<div class="yhq_left_border"></div>
+				<div class="yhq_left_yuan">
+					<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+				</div>
+				<div class="yhq_left_textbox">
+					<p class="yhq_left_title"><span class="fuhao">￥</span>100</p>
+					<p class="yhq_left_text">满100减100</p>
+					<p class="yhq_left_text_b">自用券</p>
+				</div>
+				<div class="yhq_middle">
+					<div class="yhq_middle_yuan"></div>
+					<div class="yhq_middle_line"></div>
+					<div class="yhq_middle_yuan1"></div>
+				</div>
+				<div class="yhq_right">
+					<p class="yhq_right_title">海峡联合康养中心</p>
+					<p class="yhq_right_text">2016.11.11-2016.12.12可用</p>
+				</div>
+				<div class="danxuanbox">
+					<img src="images/xuanzhong.png" width="70">
+				</div>
+			</label>
+		</div>
+		<div class="btnbox" style="margin-top: 50px;">
+        <button type="button" class="weui_btn_blue btn waves" style="width:100%;">确定</button>
+      </div>  
+	</div>
+	</div>
+</body>
+<script>
+  $(document).ready(function(){
+    $(".yhq_body").click(function(){
+      $(this).find(".danxuanbox").show();
+      $(this).siblings().find(".danxuanbox").hide();
+    });
+  });
+</script>
+<script src="js/btn_xiaoguo.js"></script>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_order"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/graybackground"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.order.OrderActivity">
+
+    <include layout="@layout/all_title_text_backimg"/>
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem1
+        android:id="@+id/order_service_object"
+        android:layout_marginTop="15dp"
+        app:itemIcon1="@drawable/yuyue_icon_1"
+        app:itemTitle1="服务对象"
+        style="@style/listitem1" />
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem1
+        android:id="@+id/order_myphone"
+        android:layout_marginTop="15dp"
+        app:itemIcon1="@drawable/yuyue_icon_2"
+        app:itemTitle1="我的电话"
+        app:itemArrowShow="false"
+        style="@style/listitem1" />
+
+    <include layout="@layout/line_1dp"/>
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem1
+        android:id="@+id/order_time"
+        app:itemIcon1="@drawable/yuyue_icon_3"
+        app:itemTitle1="预约时间"
+        app:itemArrowShow="false"
+        style="@style/listitem1" />
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem1
+        android:layout_marginTop="15dp"
+        app:itemIcon1="@drawable/yuyue_icon_4"
+        app:itemTitle1="服务方式"
+        app:itemContent1="到店"
+        style="@style/listitem1" />
+
+    <include layout="@layout/line_1dp"/>
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem1
+        android:id="@+id/service_center"
+        app:itemIcon1="@drawable/yuyue_icon_5"
+        app:itemTitle1="服务中心"
+        style="@style/listitem1" />
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="left|top"
+        android:background="@color/white"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/font_14"
+        android:hint="康复需求"
+        />
+
+    <LinearLayout
+        android:id="@+id/order_complete"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/login_button_margin"
+        android:layout_marginRight="@dimen/login_button_margin"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="@color/wechat_login_button">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

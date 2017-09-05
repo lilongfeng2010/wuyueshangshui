@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graybackground"
+    android:orientation="vertical"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.HealthyDocumentActivity">
+
+    <include layout="@layout/all_title_text_backimg"/>
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+        android:id="@+id/healthy_document_item"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        app:itemTitle2="基础档案" />
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+        android:id="@+id/healthy_document_recure_report_item"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        app:itemTitle2="康复报告" />
+
+
+</LinearLayout>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="name" content="content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="icon" href="images/logo_top.png">
+  <link rel="stylesheet" type="text/css" href="css/weui.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/rili.css">
+  <link rel="stylesheet" type="text/css" href="css/my.css">
+  <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+  <script src="js/jquery-weui.js" type="text/javascript"></script>
+  
+</head>
+<title>地址管理</title>
+<body>
+<div class="body_con">
+  <div class="top_con">
+    <a href="personal_homepage.html"  class="top_left"><span class="top_jiantou"></span></a>
+    <div class="top_center"><p>地址管理</p></div>
+    <a href="javascript:;" class="top_right"><span></span></a>
+  </div>
+  <div class="con">
+    <div class="weui_cells weui_cells_radio" style="margin-top: 10px;">
+      <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_media_title" style="font-weight: 500; font-size: 18px;">家庭地址</p>
+        </div>
+      </div>
+      <label class="weui_cell weui_check_label" for="family_1000082">
+        <div class="weui_cell_hd">
+          <img class="myicon" src="images/icon_nav_city.png" alt="">                        
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+        <p class="jt_name">幸福老家</p>
+        <p class="add_name">测试小区 22单元202</p>
+        </div>
+        <div class="weui_cell_ft">
+          <input checked type="radio" class="weui_check" name="address" id="family_1000082" value="family_1000082">
+          <span class="weui_icon_checked"></span>
+        </div>
+      </label>
+      <label class="weui_cell weui_check_label" for="family_1000083">
+        <div class="weui_cell_hd">
+          <img class="myicon" src="images/icon_nav_city.png" alt="">                        
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+        <p class="jt_name">幸福老家</p>
+        <p class="add_name">测试小区 22单元202</p>
+        </div>
+        <div class="weui_cell_ft">
+          <input checked type="radio" class="weui_check" name="address" id="family_1000083" value="family_1000083">
+          <span class="weui_icon_checked"></span>
+        </div>
+      </label>
+    </div>
+    <div class="weui_cells" style="margin-top: 10px;">
+      <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+          <p class="weui_media_title" style="font-weight: 500; font-size: 18px;">个人地址</p>
+        </div>
+      </div>
+      <div class="weui_cell list_height" id="gr_add">
+        <div class="weui_cell_hd">
+          <img class="myicon" src="images/icon_nav_city.png" alt="">                        
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+        <p class="add_name">测试小区 22单元202</p>
+        </div>
+        <div class="weui_cell_ft">
+          <img src="images/shanchu.png" id="show-confirm" width="18" alt="">
+        </div>
+      </div>
+      <div class="weui_cell list_height" id="gr_add">
+        <div class="weui_cell_hd">
+          <img class="myicon" src="images/icon_nav_city.png" alt="">                        
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+        <p class="add_name">测试小区 22单元202</p>
+        </div>
+        <div class="weui_cell_ft">
+          <img src="images/shanchu.png" width="18" id="show-confirm" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="weui_cells dibu">
+  <a href="xinjian_add.html" class="dibu_text">新建个人地址</a>
+</div>
+  <script>
+    $(document).on("click", "#show-confirm", function() {
+        $.confirm("您确定要删除当前地址吗?", "确认删除?", function() {
+          $.toast("文件已经删除!");
+          $("#gr_add").remove();
+        }, function() {
+          //取消操作
+        
+        });
+      });
+  </script>
+  </div>
+</body>
+<script src="js/btn_xiaoguo.js"></script>
+</html>

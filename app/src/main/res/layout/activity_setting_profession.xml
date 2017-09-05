@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting_profession"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graybackground"
+    android:orientation="vertical"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.SettingProfessionActivity">
+
+    <include layout="@layout/all_title_text_backimg" />
+
+    <include layout="@layout/line_1dp" />
+
+    <RadioGroup
+        android:id="@+id/profession_RadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_01"
+            style="@style/radio_button_profession"
+            android:text="@string/profession_01" />
+
+        <RadioButton
+            android:id="@+id/radio_02"
+            style="@style/radio_button_profession"
+            android:layout_marginTop="1dp"
+            android:text="@string/profession_02" />
+
+        <RadioButton
+            android:id="@+id/radio_03"
+            style="@style/radio_button_profession"
+            android:layout_marginTop="1dp"
+            android:text="@string/profession_03" />
+
+        <RadioButton
+            android:id="@+id/radio_04"
+            style="@style/radio_button_profession"
+            android:layout_marginTop="1dp"
+            android:text="@string/profession_04" />
+
+        <RadioButton
+            android:id="@+id/radio_05"
+            style="@style/radio_button_profession"
+            android:layout_marginTop="1dp"
+            android:text="@string/profession_05" />
+
+        <RadioButton
+            android:id="@+id/radio_06"
+            style="@style/radio_button_profession"
+            android:layout_marginTop="1dp"
+            android:text="@string/profession_06" />
+
+        <RadioButton
+            android:id="@+id/radio_07"
+            style="@style/radio_button_profession"
+            android:layout_marginTop="1dp"
+            android:text="@string/profession_07" />
+
+        <RadioButton
+            android:id="@+id/radio_08"
+            style="@style/radio_button_profession"
+            android:layout_marginTop="1dp"
+            android:text="@string/profession_08" />
+    </RadioGroup>
+
+
+</LinearLayout>

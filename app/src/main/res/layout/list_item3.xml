@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_layout"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:layout_height="60dp"
+    android:background="@drawable/list_item_bg">
+
+    <LinearLayout
+        android:layout_toRightOf="@id/list_item_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:paddingRight="@dimen/margin_15"
+        >
+
+        <TextView
+            android:id="@+id/list_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="头像:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_15"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/listitem3_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/test"
+            />
+
+        <View
+            android:layout_width="@dimen/arrow_height"
+            android:layout_height="@dimen/arrow_height"
+            android:background="@drawable/user_home_arrow"
+            android:visibility="invisible"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

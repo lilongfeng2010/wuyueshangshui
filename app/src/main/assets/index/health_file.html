@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="name" content="content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="icon" href="images/logo_top.png">
+  <link rel="stylesheet" type="text/css" href="css/weui.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/rili.css">
+  <link rel="stylesheet" type="text/css" href="css/my.css">
+  <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+  <script src="js/jquery-weui.js" type="text/javascript"></script>
+  
+</head>
+<title>健康档案</title>
+<body>
+<div class="body_con">
+	<div class="top_con">
+		<a href="index.html"  class="top_left"><span class="top_jiantou"></span></a>
+		<div class="top_center"><p>健康档案</p></div>
+		<a href="" class="top_right"><span class="red_text">&nbsp;</span></a>
+	</div>
+	<div class="con">
+		<div class="weui_cells weui_cells_access">
+			<a class="weui_cell list_height weui_cells_access open-popup" href="javascript:;" data-target="#homecy">
+				<div class="weui_cell_hd">
+					<img src="images/tx.jpg" class="touxiangicon">
+				</div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<p class="fontsize">小白</p>
+				</div>
+				<div class="weui_cell_ft">
+					切换家庭成员
+				</div>
+			</a>
+		</div>
+		<div id="homecy" class='weui-popup-container'>
+			<div class="weui-popup-overlay"></div>
+			<div class="weui-popup-modal">
+				<div class="top_con">
+					<a href="javascript:history.go(-1)"  class="top_left"></a>
+					<div class="top_center"><p>选择家庭成员</p></div>
+					<a href="javascript:;" class="top_right"><span class="bluetext close-popup">关闭</span></a>
+				</div>
+				<div class="weui_cells" style="margin-top: 10px;">
+					<div class="weui_cell list_height">
+						<div class="weui_cell_bd">
+							<img src="images/home.png" class="myicon">
+						</div>
+						<div class="weui_cell_bd weui_cell_primary">
+							<p class="fontsize">幸福老家</p>
+						</div>
+					</div>
+					<div class="weui_cell" id="home_cy_box">
+						<div class="weui_cell_bd home_cy">
+							<img src="images/touxiang1.jpg" class="family_touxiang">
+							<span class="dui">&#10003</span>
+							<p class="family_text">爷爷</p>
+						</div>
+						<div class="weui_cell_bd home_cy">
+							<img src="images/touxiang2.jpg" class="family_touxiang">
+							<span class="dui">&#10003</span>
+							<p class="family_text">奶奶</p>
+						</div>
+						<div class="weui_cell_bd home_cy">
+							<img src="images/touxiang3.jpg" class="family_touxiang">
+							<span class="dui">&#10003</span>
+							<p class="family_text">爸爸</p>
+						</div>
+						<div class="weui_cell_bd home_cy">
+							<img src="images/touxiang4.jpg" class="family_touxiang">
+							<span class="dui">&#10003</span>
+							<p class="family_text">妈妈</p>
+						</div>
+					</div>
+				</div>
+				<script>
+					$(function(){
+						$(".dui").hide();
+						$(".home_cy").click(function(){
+							$(this).find(".family_touxiang").addClass("home_cy1");
+							$(this).find(".dui").show();
+							$(this).find(".family_text").addClass('bluetext');
+							$(this).siblings().find(".family_touxiang").removeClass("home_cy1");
+							$(this).siblings().find(".dui").hide();
+							$(this).siblings().find(".family_text").removeClass('bluetext');
+						})
+					})
+				</script>
+				<div class="btnbox">
+					<button type="button" class="weui_btn_blue btn close-popup waves">确认</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="weui_cells">
+			<a href="javascript:;" class="weui_cell list_height open-popup" data-target="#homecy">
+				<div class="weui_cell_bd weui_cell_primary">
+					<p>关注家人</p>
+				</div>
+				<div class="weui_cell_ft">
+					<span class="youjiantou"></span>
+				</div>
+			</a>
+			<div class="weui_cell list_height">
+				<div class="weui_cell_bd weui_cell_primary">
+					<p class="redtext">您没有关注家人</p>
+				</div>
+			</div>
+			<div class="weui_cell list_height guanzhulist">
+				<div class="weui_cell_hd">
+					<img src="images/tx.jpg" class="family_icon">
+				</div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<p>小白</p>
+				</div>
+				<div class="weui_cell_ft">
+					<a href="javascript:;" class="redtext" id="quxiao">取消关注</a>
+				</div>
+			</div>
+		</div>
+		<div class="weui_cells">
+			<a class="weui_cell weui_cells_access list_height" href="jichudangan.html">
+				<div class="weui_cell_bd weui_cell_primary">
+					<p class="fontsize">基础档案</p>
+				</div>
+				<div class="weui_cell_ft">
+					<span></span>
+				</div>
+			</a>
+			<a class="weui_cell weui_cells_access list_height" href="zizhutijian.html">
+				<div class="weui_cell_bd weui_cell_primary">
+					<p class="fontsize">自助体检</p>
+				</div>
+				<div class="weui_cell_ft">
+					<span></span>
+				</div>
+			</a>
+			<a class="weui_cell weui_cells_access list_height" href="javascript:;">
+				<div class="weui_cell_bd weui_cell_primary">
+					<p class="fontsize">康复记录</p>
+				</div>
+				<div class="weui_cell_ft">
+					<span></span>
+				</div>
+			</a>
+			<a class="weui_cell weui_cells_access list_height" href="kangfu_bg.html">
+				<div class="weui_cell_bd weui_cell_primary">
+					<p class="fontsize">康复报告</p>
+				</div>
+				<div class="weui_cell_ft">
+					<span></span>
+				</div>
+			</a>
+		</div>
+	</div>
+	<script>
+  $(document).on("click","#quxiao", function() {
+        $.confirm("您确定要取消关注吗?", function() {
+        	$(".guanzhulist").remove();
+          $.toast("已取消!");
+        }, function() {
+          //取消操作
+
+        });
+      });
+</script>
+	</div>
+</body>
+<script src="js/btn_xiaoguo.js"></script>
+</html>

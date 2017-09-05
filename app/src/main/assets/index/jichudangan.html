@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="name" content="content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="icon" href="images/logo_top.png">
+  <link rel="stylesheet" type="text/css" href="css/weui.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/rili.css">
+  <link rel="stylesheet" type="text/css" href="css/my.css">
+  <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+  <script src="js/jquery-weui.js" type="text/javascript"></script>
+  
+</head>
+<title>基础档案</title>
+<body>
+<div class="body_con">
+  <div class="top_con">
+    <a href="health_file.html"  class="top_left"><span class="top_jiantou"></span></a>
+    <div class="top_center"><p>基础档案</p></div>
+    <a href="javascript:;" class="top_right"><span class="bluetext">保存</span></a>
+  </div>
+  <div class="con">
+
+    <div class="weui_tab" style="margin-top: 10px;">
+      <div class="weui_tab">
+        <div class="weui_navbar">
+          <a class="weui_navbar_item weui_bar_item_on" href="#tab1">
+            基本信息
+          </a>
+          <a class="weui_navbar_item" href="#tab2">
+            生活习惯
+          </a>
+          <a class="weui_navbar_item" href="#tab3">
+            健康史
+          </a>
+        </div>
+        <div class="weui_tab_bd" style="margin-top: 0px;">
+          <div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active">
+            <div class="weui_cells">
+              <div class="weui_cell list_height">
+                <div class="weui_cell_bd weui_cell_primary">
+                  <p>身高</p>
+                </div>
+                <div class="weui_cell_ft" style="margin-right: 5px;">
+                 <input class="weui_input" type="text" placeholder="请输入您的身高" value="" style="text-align: right;">
+               </div>
+               <div class="weui_cell_ft">
+                <span>cm</span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>视力</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择您的视力情况" id="shili"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>民族</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择您的民族" id="minzu"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>宗教</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择宗教" id="zongjiao"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>婚姻</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择婚姻状况" id="hunyin"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>文化程度</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择文化程度" id="wenhua"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>医疗费用支付</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择医疗费用支付方式" id="yiliao"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+          </div>
+          <div class="btnbox">
+            <button class="weui_btn_blue btn waves">下一步</button>
+          </div>
+          <script>
+            $("#shili").picker({
+              title: "请选择您的视力情况",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['正常','近视','远视','斜视','闪光','偏盲','色盲']
+              }
+              ]
+            });
+            $("#minzu").picker({
+              title: "请选择民族",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['汉族','少数民族']
+              }
+              ]
+            });
+            $("#zongjiao").picker({
+              title: "请选择宗教",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['佛教','基督教','伊斯兰教','其他','无']
+              }
+              ]
+            });
+            $("#hunyin").picker({
+              title: "请选择婚姻状况",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['已婚','未婚','离婚','丧偶','分居']
+              }
+              ]
+            });
+            $("#wenhua").picker({
+              title: "请选择文化程度",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['小学及以下','初中','高中','中专','大专及以上']
+              }
+              ]
+            });
+            $("#yiliao").picker({
+              title: "请选择医疗费用支付方式",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['全公费','部分公费','城镇职工医疗保险','城镇居民医疗保险','商业医疗保险','新型农村合作医疗','贫困救助','全自费']
+              }
+              ]
+            });
+          </script>
+        </div>
+        <div id="tab2" class="weui_tab_bd_item">
+          <div class="weui_cells">
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>三餐是否规律</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择三餐是否规律" id="sancan"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>睡眠是否规律</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择睡眠是否规律" id="shuimian"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>社交情况</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择社交情况" id="shejiao"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>锻炼频率</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择锻炼频率" id="duanlian"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>抽烟</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择锻是否抽烟" id="chouyan"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>饮酒</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="请选择是否饮酒" id="yinjiu"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+          </div>
+          <div class="btnbox">
+            <button class="weui_btn_blue btn waves">下一步</button>
+          </div>
+          <script>
+            $("#sancan").picker({
+              title: "请选择三餐是否规律",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+            $("#shuimian").picker({
+              title: "请选择睡眠是否规律",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+            $("#shejiao").picker({
+              title: "请选择社交情况",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['每日','偶尔','从不']
+              }
+              ]
+            });
+            $("#duanlian").picker({
+              title: "请选择锻炼频率",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['每日','每周一次以上','偶尔','从不']
+              }
+              ]
+            });
+            $("#chouyan").picker({
+              title: "请选择锻是否抽烟",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+            $("#yinjiu").picker({
+              title: "请选择是否饮酒",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+          </script>
+        </div>
+        <div id="tab3" class="weui_tab_bd_item">
+          <div class="weui_cells">
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>药物过敏</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="选择是否药物过敏" id="yaowu"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>食物过敏</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="选择是否食物过敏" id="shiwu"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>慢性疾病</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="选择患有慢性疾病" id="manbing"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+            <div class="weui_cell list_height">
+              <div class="weui_cell_bd">
+                <p>是否手术</p>
+              </div>
+              <div class="weui_cell_bd weui_cell_primary">
+                <input type="text" name="" value="" class="weui_input" placeholder="选择是否有过手术" id="shoushu"  style="text-align: right;">
+              </div>
+              <div class="weui_cell_ft">
+                <span class="youjiantou"></span>
+              </div>
+            </div>
+          </div>
+          <div class="btnbox">
+            <button class="weui_btn_blue btn waves">保存</button>
+          </div>
+          <script>
+            $("#yaowu").picker({
+              title: "选择是否药物过敏",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+            $("#shiwu").picker({
+              title: "选择是否食物过敏",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+            $("#manbing").picker({
+              title: "选择患有慢性疾病",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+            $("#shoushu").picker({
+              title: "选择是否有过手术",
+              cols: [
+              {
+                textAlign: 'center',
+                values: ['是','否']
+              }
+              ]
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+<script src="js/btn_xiaoguo.js"></script>
+</html>

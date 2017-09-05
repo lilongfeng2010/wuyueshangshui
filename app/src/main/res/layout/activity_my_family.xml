@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_family"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graybackground"
+    android:orientation="vertical"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.MyFamilyActivity">
+
+    <include layout="@layout/all_title_text_backimg" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="家庭成员"
+        android:textSize="@dimen/font_20"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_family_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/white" />
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+        android:id="@+id/my_family_familyName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        app:itemTitle2="家庭名称:" />
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+        android:id="@+id/my_family_address"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        app:itemTitle2="家庭地址:" />
+
+    <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+        android:id="@+id/my_family_otherFamily"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        app:itemTitle2="查看其它家庭" />
+
+</LinearLayout>

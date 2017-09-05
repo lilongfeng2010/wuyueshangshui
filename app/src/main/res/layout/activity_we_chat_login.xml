@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_we_chat_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/graybackground"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.login.WeChatLoginActivity">
+
+    <include layout="@layout/all_title_text_backimg"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wechatlogin_head_height"
+        android:background="@color/white">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/wechatlogin_circle_head"
+            android:layout_width="@dimen/wechatlogin_head_image_width"
+            android:layout_height="@dimen/wechatlogin_head_image_width"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/login_edittext_margin"
+        android:layout_marginLeft="@dimen/login_edittext_margin"
+        android:layout_marginRight="@dimen/login_edittext_margin"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/wechatlogin_phonenum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:padding="5dp"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_14"
+            android:hint="@string/please_input_phonenumber"
+            />
+        <ImageView
+            android:id="@+id/wechatlogin_delete_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:src="@drawable/delete_edit_login_black"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="@dimen/login_edittext_margin"
+        android:layout_marginRight="@dimen/login_edittext_margin"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/wechatlogin_checknum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:layout_toLeftOf="@+id/wechatlogin_delete_2"
+            android:inputType="text"
+            android:textCursorDrawable="@null"
+            android:background="@null"
+            android:textSize="@dimen/font_14"
+            android:hint="@string/please_input_checknum"
+            />
+
+
+        <ImageView
+            android:id="@+id/wechatlogin_delete_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:layout_toLeftOf="@+id/view02"
+            android:src="@drawable/delete_edit_login_black"/>
+
+        <View
+            android:id="@+id/view02"
+            android:layout_width="0.5dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/wechatlogin_getchecknum"
+            />
+
+
+        <TextView
+            android:id="@+id/wechatlogin_getchecknum"
+            android:layout_width="@dimen/get_checknum_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="@string/get_checknum"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/wechatlogin_login"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/login_button_margin"
+        android:layout_marginRight="@dimen/login_button_margin"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="@color/wechat_login_button">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

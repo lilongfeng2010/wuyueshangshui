@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_phone_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.SettingPhoneActivity">
+
+    <include layout="@layout/all_title_text_backimg"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/login_edittext_margin"
+        android:layout_marginLeft="@dimen/login_edittext_margin"
+        android:layout_marginRight="@dimen/login_edittext_margin"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/phoneNum_setting_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:padding="5dp"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_14"
+            android:hint="@string/please_input_11_phonenum"
+            />
+        <ImageView
+            android:id="@+id/phoneNum_setting_delete_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:src="@drawable/delete_edit_login_black"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="@dimen/login_edittext_margin"
+        android:layout_marginRight="@dimen/login_edittext_margin"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/phoneNum_setting_checknum_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:background="@null"
+            android:layout_toLeftOf="@+id/phoneNum_setting_delete_2"
+            android:inputType="text"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/font_14"
+            android:hint="@string/please_input_message_checknum"
+            />
+
+        <ImageView
+            android:id="@+id/phoneNum_setting_delete_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/delete_edit_login_black"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/view01"
+            android:visibility="invisible"
+            />
+
+        <View
+            android:id="@+id/view01"
+            android:layout_width="0.5dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/phoneNum_setting_checknum"
+            />
+
+
+        <TextView
+            android:id="@+id/phoneNum_setting_checknum"
+            android:layout_width="@dimen/get_checknum_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="@string/get_checknum"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/phoneNum_setting_submit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/login_button_margin"
+        android:layout_marginRight="@dimen/login_button_margin"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp"
+        android:background="@drawable/button_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

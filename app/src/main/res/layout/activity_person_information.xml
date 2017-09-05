@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_person_information"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graybackground"
+    android:orientation="vertical"
+    tools:context="com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.PersonInformationActivity">
+
+    <include layout="@layout/all_title_text_backimg" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/graybackground" />
+
+            <include
+                android:id="@+id/person_information_headItem"
+                layout="@layout/list_item3" />
+
+            <include layout="@layout/line_1dp" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/person_information_ID"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                app:itemTitle2="用户ID:" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/person_information_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                android:layout_marginTop="15dp"
+                app:itemTitle2="手机号:" />
+
+            <include layout="@layout/line_1dp" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/person_information_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                app:itemTitle2="姓名:" />
+
+            <include layout="@layout/line_1dp" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/identify_card"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                app:itemTitle2="身份证:" />
+
+            <include layout="@layout/line_1dp" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/sex_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                app:itemTitle2="性别:" />
+
+            <include layout="@layout/line_1dp" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/age_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                app:itemTitle2="年龄:" />
+
+            <include layout="@layout/line_1dp" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/profession_Setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                app:itemTitle2="职业:" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/bind_wechat_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                android:layout_marginTop="15dp"
+                app:itemTitle2="绑定微信" />
+
+            <include layout="@layout/line_1dp" />
+
+            <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:id="@+id/password_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/listitem2_height"
+                app:itemContent2="设置密码"
+                app:itemTitle2="密码管理:" />
+
+            <LinearLayout
+                android:id="@+id/exit_button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/login_button_margin"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="退出"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

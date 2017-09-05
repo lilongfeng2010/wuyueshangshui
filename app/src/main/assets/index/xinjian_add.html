@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="name" content="content">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="icon" href="images/logo_top.png">
+  <link rel="stylesheet" type="text/css" href="css/weui.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-weui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/rili.css">
+  <link rel="stylesheet" type="text/css" href="css/my.css">
+  <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+  <script src="js/jquery-weui.js" type="text/javascript"></script>
+  
+</head>
+<title>新建地址</title>
+<body>
+<div class="body_con">
+  <div class="top_con">
+    <a href="address.html"  class="top_left"><span class="top_jiantou"></span></a>
+    <div class="top_center"><p>新建地址</p></div>
+    <a href="javascript:;" class="top_right"><span></span></a>
+  </div>
+  <div class="con">
+<div class="weui_cells">
+  <div class="weui_cell list_height">
+    <div class="weui_cell_bd">
+      <p class="text">小区名称</p>
+    </div>
+    <div class="weui_cell_bd weui_cell_primary">
+      <input class="weui_input" type="text" placeholder="请选择小区名称" value="" id="add" style="text-align: right;">
+    </div>
+    <div class="weui_cell_ft">
+      <span class="youjiantou"></span>
+    </div>
+  </div>
+  <div class="weui_cell">
+    <div class="weui_cell_bd ">
+      <p>填写居住小区</p>
+    </div>
+    <div class="weui_cell_bd weui_cell_primary">
+      <input class="weui_input" type="text" placeholder="请填写小区名称" value="" style="text-align: right;">
+    </div>
+    <div class="weui_cell_ft">
+      <span class="youjiantou"></span>
+    </div>
+  </div>
+  <div class="weui_cell list_height">
+    <div class="weui_cell_bd">
+      <p class="text">家庭地址</p>
+    </div>
+    <div class="weui_cell_bd weui_cell_primary">
+      <input class="weui_input" type="text" placeholder="请输入填写地址" value="" style="text-align: right;">
+    </div>
+    <div class="weui_cell_ft">
+      <span class="youjiantou"></span>
+    </div>
+  </div>
+</div>
+    <div class="btnbox">
+      <button class="weui_btn_blue btn waves">完成</button>
+    </div>
+  </div>
+  <script>
+$("#add").picker({
+  title: "请选择您的居住小区",
+  cols: [
+    {
+      textAlign: 'center',
+      values: ['测试小区', '鼓东1号', '鼓东一号广场', '万霞新城', '都司公寓', '贤南社区', '东牙巷小区', '创业新村', '金城大厦', '妙巷24号小区', '福建省工交大院', '开元小区','尚宾路公寓','尚宾路17号小区','贤南公寓','建荣公寓','金皇公寓','尚宾花园','凤鸣公寓','开元新村1区','贤南社区','福建省机械工业厅住宅','虎节楼','肃威花园','锦绣华庭','鼓东小区','天湖花园','七星新村3-9座','卫前里新村','没有我居住的小区']
+    }
+  ]
+});
+</script>
+  </div>
+</body>
+<script src="js/btn_xiaoguo.js"></script>
+</html>

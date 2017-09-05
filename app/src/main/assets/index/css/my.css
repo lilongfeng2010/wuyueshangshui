@@ -1,0 +1,733 @@
+.appointbox{
+    width: 96%;
+    margin: 20px auto 0;
+    background-color: #fff;
+    position: relative;
+}
+.appoint_top{
+    overflow: hidden;
+    border-bottom:1px dashed #d9d9d9;
+    background-color: #fff;
+}
+.appoint_name{
+    float: left;
+    padding-left: 3%;
+    line-height: 46px;
+    font-weight: bold;
+    font-size: 17px;
+}
+.appoint_state{
+    float: right;
+    text-align: right;
+    line-height: 46px;
+    padding-right: 3%;
+}
+.appoint_con{
+    width: 94%;
+    margin: 0 auto;
+}
+.appoint_con :last-child{
+    border-bottom: none;
+}
+.appoint_list{
+    overflow: hidden;
+    border-bottom: 1px solid #f6f6f6;
+}
+.appoint_list > button{
+    float: right;
+    margin: 15px 0;
+}
+.appoint_bottom{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    background-image: url(../images/my_appoint_bg.png);
+    background-size:16px;
+    margin-left:1px;
+    height: 5px;
+}
+.appoint_list_left_text{
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width:100%;
+    padding-right:5px;
+}
+.appoint_list_left{
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width:60%;
+    padding-right:5px;
+}
+.appoint_num{
+    float: left;
+    padding-top: 15px;
+    padding-left: 10px;
+    color: #d6d6d6;
+    text-align: center;
+}
+.appoint_money{
+    float: right;
+    text-align: left;
+    width: 65px;
+    padding-top: 15px;
+}
+.mybox {
+    background-color: #FFFFFF;
+    line-height: 1.41176471;
+    font-size: 17px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.mybox:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #fff;
+    color: #D9D9D9;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+.mybox:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    color: #D9D9D9;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.my_img_bgbox{
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/my_tx_bg.png);
+    background-size: 100% 100%;
+    margin-top:-15px;
+    position: relative;
+}
+.my_imgbox{
+    display: block;
+    width: 100px;
+    height: 100px;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+.my_imgbox_a{
+    width: 90px;
+    height: 90px;
+    border-radius:90px;
+    margin: 30px auto 0;
+    border: 6px solid rgba(255,255,255,0.3);
+    position: relative;
+    overflow: hidden;
+}
+.my_img{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0%;
+}
+.my_name{
+    width: 100px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    padding-bottom: 8px;
+}
+.index_bg{
+    width: 100%;
+    height: 40px;
+    background:url(../images/index_bottombg.png) repeat-x;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+}
+.my_con{
+    width: 100%;
+}
+.my_icon{
+    display: block;
+    width:50px;
+    height: 50px;
+    margin: 15px auto 10px auto;
+}
+.jiankang_a{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.jiankang_b{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.jiankang_a > p{
+    font-size: 14px;
+}
+
+.jiankang_b > p{
+    font-size: 14px;
+}
+.seacrh_form{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+.input_searchbox{
+    padding-left: 3%;
+    padding-right: 96px;
+
+
+}
+.input_searchbox input{
+    font-weight: 300;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 30px;
+    font-size: 16px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+}
+.account_input{
+    font-weight: 300;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 30px;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    outline: 0;
+    margin-left: -5%;
+    -webkit-appearance: none;
+    background-color: transparent;
+}
+
+.saoyisao{
+    position: absolute;
+    top: 16px;
+    right: 105px;
+}
+.seacrh_btn{
+    position: absolute;
+    top: 10px;
+    right: 3%;
+}
+.chongzhibox{
+    overflow: hidden;
+    width: 94%;
+    margin: 10px auto;
+}
+.chongzhi_a{
+    display: block;
+    width: 96%;
+    margin: 10px auto;
+    padding: 18px 0;
+    text-align: center;
+    border:1px solid #10acff;
+    border-radius: 6px;
+    background: #fff;
+
+}
+.chongzhibox span{
+    display: block;
+    color: #10acff;
+    font-size: 18px;
+    line-height: 18px;
+}
+.chongzhibox span:last-child{
+    font-weight: 300;
+    font-size: 14px;
+    color: #50c2ff;
+}
+.chongzhibox .chongzhi{
+    display: block;
+    width: 96%;
+    margin: 10px auto;
+    padding: 18px 0;
+    text-align: center;
+    border:1px solid #10acff;
+    border-radius: 6px;
+    background: #f3fbff;
+}
+.huiyuan_a{
+    border: 3px solid white;
+    border-radius: 10px;
+}
+.chongzhi_y{
+    border: 3px solid rgba(211,183,106,1);
+    border-radius: 10px;
+    background: #fff;
+}
+.chongzhi_j{
+    border: 3px solid #32b9ee;
+    border-radius: 10px;
+}
+.chongzhi_n{
+    border: 3px solid #f18545;
+    border-radius: 10px;
+}
+.hy_name{
+    font-size: 18px;
+}
+.hy_js{
+    color: #999;
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 90%;
+}
+.tximg{
+    position: fixed;
+    top: 50%;
+    margin-top: -25%;
+    left: 0;
+}
+@media screen and (max-width:401px){
+    .my_img_bgbox{
+        width: 100%;
+        height: 270px;
+        background-image: url(../images/my_tx_bg.png);
+        background-size: 100% 100%;
+        margin-top:-15px;
+        position: relative;
+    }
+    .my_imgbox{
+        display: block;
+        width: 100px;
+        height: 100px;
+        padding-top: 30px;
+        margin: 0 auto;
+    }
+    .my_imgbox_a{
+        width: 90px;
+        height: 90px;
+        border-radius:90px;
+        margin: 30px auto 0;
+        border: 6px solid rgba(255,255,255,0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    .my_img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0%;
+    }
+    .my_name{
+        width: 100px;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        padding-bottom: 8px;
+    }
+    .index_bg{
+        width: 100%;
+        height: 40px;
+        background:url(../images/index_bottombg.png) repeat-x;
+        background-size: 100% 100%;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+    }
+    .my_con{
+        width: 100%;
+        padding-top:-10px;
+    }
+    .my_icon{
+        display: block;
+        width:40px;
+        height: 40px;
+        margin: 15px auto 10px auto;
+    }
+    .jiankang_a{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .jiankang_b{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .jiankang_a > p{
+        font-size: 13px;
+    }
+
+    .jiankang_b > p{
+        font-size: 13px;
+    }
+
+    .chongzhi_a{
+        display: block;
+        position: relative;
+        width: 96%;
+        margin: 10px auto;
+        padding: 15px 0;
+        text-align: center;
+        border:1px solid #10acff;
+        border-radius: 6px;
+        background: #fff;
+
+    }
+    .chongzhibox span{
+        display: block;
+        color: #10acff;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .chongzhibox span:last-child{
+        font-weight: 300;
+        font-size: 14px;
+        color: #50c2ff;
+    }
+    .chongzhibox .chongzhi{
+        display: block;
+        width: 96%;
+        margin: 10px auto;
+        padding: 15px 0;
+        text-align: center;
+        border:1px solid #10acff;
+        border-radius: 6px;
+        background: #f3fbff;
+    }
+}
+
+@media screen and (max-width:376px){
+    .my_img_bgbox{
+        width: 100%;
+        height: 270px;
+        background-image: url(../images/my_tx_bg.png);
+        background-size: 100% 100%;
+        margin-top:-15px;
+        position: relative;
+    }
+    .my_imgbox{
+        display: block;
+        width: 100px;
+        height: 100px;
+        padding-top: 30px;
+        margin: 0 auto;
+    }
+    .my_imgbox_a{
+        width: 75px;
+        height: 75px;
+        border-radius: 90px;
+        margin: 25px auto 0;
+        border: 6px solid rgba(255,255,255,0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    .my_img{
+        position: absolute;
+        height: 100%;
+        width: 100%
+        top: 0;
+        left: 0%;
+    }
+    .my_name{
+        width: 100px;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        padding-bottom: 8px;
+    }
+    .index_bg{
+        width: 100%;
+        height: 40px;
+        background:url(../images/index_bottombg.png) repeat-x;
+        background-size: 100% 100%;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+    }
+    .my_con{
+        width: 100%;
+        padding-top:00px;
+    }
+    .chongzhi_a{
+        display: block;
+        width: 96%;
+        margin: 10px auto;
+        padding: 15px 0;
+        text-align: center;
+        border:1px solid #10acff;
+        border-radius: 6px;
+        background: #fff;
+
+    }
+    .chongzhibox span{
+        display: block;
+        color: #10acff;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .chongzhibox span:last-child{
+        font-weight: 300;
+        font-size: 14px;
+        color: #50c2ff;
+    }
+    .chongzhibox .chongzhi{
+        display: block;
+        width: 96%;
+        margin: 10px auto;
+        padding: 15px 0;
+        text-align: center;
+        border:1px solid #10acff;
+        border-radius: 6px;
+        background: #f3fbff;
+    }
+
+    .chengyuanbox{
+        padding: 10px 15px;
+        overflow:hidden;
+    }
+    .chengyuan_bd{
+        float: left;
+        margin: 5px 4px 10px;
+    }
+    .family_touxiang{
+        width: 56px;
+        height: 56px;
+        border-radius:10px;
+        border: 1px solid #fff;
+        text-align: center;
+        display: table-cell;
+        vertical-align:middle;
+        text-align:center;
+        /* 针对IE的Hack */
+        *display: block;
+        *font-size: 66px;/*约为高度的0.873，200*0.873 约为175*/
+        *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+        position: relative;
+        overflow:hidden;
+    }
+    .family_touxiang img{
+        width: 100%;
+        vertical-align: middle;
+        height: 100%;
+    }
+    .chengyuan_bd .yqcy{
+        display: block;
+        margin: 4px 0 0 0;
+        width: 50px;
+        height: 50px;
+
+    }
+    .family_text{
+        margin: 0 auto;
+        font-size: 12px;
+        color: #333;
+        width: 48px;
+        text-align: center;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        -o-text-overflow:ellipsis;
+        overflow: hidden;
+        font-family:Arial;
+    }
+.index_link_a{
+      border-right:2px solid #f5f5f5;
+    }
+    .index_link_a img{
+      width:16px; 
+      margin: 10px 2px 0 15px;
+      float:left;
+    }
+.index_link_a span{
+  float:left; 
+  line-height: 36px;
+  font-size: 14px;
+}
+
+}
+@media screen and (max-width:321px){
+    .my_img_bgbox{
+        width: 100%;
+        height: 250px;
+        background-image: url(../images/my_tx_bg.png);
+        background-size: 100% 100%;
+        margin-top:-15px;
+        position: relative;
+    }
+
+    .loginbox{
+        width: 75%;
+        padding: 20px 20px 0 20px;
+        background-color: #fff;
+        margin: 40px auto 0 auto;
+        box-shadow:-5px 0 10px #e5e5e5, /*左边阴影*/
+        5px 0 10px #e5e5e5, /*右边阴影*/
+        0 -5px 10px #e5e5e5, /*顶部阴影*/
+        0 5px 10px #e5e5e5; /*底边阴影*/
+    }
+    .my_icon{
+        display: block;
+        width:36px;
+        height: 36px;
+        margin: 15px auto 10px auto;
+    }
+    .jiankang_a{
+        text-align: center;
+        padding-bottom: 8px;
+    }
+    .jiankang_b{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .jiankang_a > p{
+        font-size: 13px;
+    }
+
+    .jiankang_b > p{
+        font-size: 13px;
+    }
+
+    .chongzhi_a{
+        display: block;
+        width: 96%;
+        margin: 10px auto;
+        padding: 11px 0;
+        text-align: center;
+        border:1px solid #10acff;
+        border-radius: 6px;
+        background: #fff;
+
+    }
+    .chongzhibox span{
+        display: block;
+        color: #10acff;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .chongzhibox span:last-child{
+        font-weight: 300;
+        font-size: 13px;
+        color: #50c2ff;
+    }
+    .chongzhibox .chongzhi{
+        display: block;
+        width: 96%;
+        margin: 10px auto;
+        padding: 11px 0;
+        text-align: center;
+        border:1px solid #10acff;
+        border-radius: 6px;
+        background: #f3fbff;
+    }
+
+
+    .chengyuanbox{
+        padding: 10px 15px;
+        overflow:hidden;
+    }
+    .chengyuan_bd{
+        float: left;
+        margin: 5px 3px 10px;
+    }
+    .family_touxiang{
+        width: 50px;
+        height: 50px;
+        border-radius:10px;
+        border: 1px solid #fff;
+        text-align: center;
+        display: table-cell;
+        vertical-align:middle;
+        text-align:center;
+        /* 针对IE的Hack */
+        *display: block;
+        *font-size: 66px;/*约为高度的0.873，200*0.873 约为175*/
+        *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+        position: relative;
+        overflow:hidden;
+    }
+    .family_touxiang img{
+        width: 100%;
+        vertical-align: middle;
+        height: 100%;
+    }
+    .chengyuan_bd .yqcy{
+        display: block;
+        margin: 4px 0 0 0;
+        width: 50px;
+        height: 50px;
+
+    }
+    .family_text{
+        margin: 0 auto;
+        font-size: 12px;
+        color: #333;
+        width: 48px;
+        text-align: center;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        -o-text-overflow:ellipsis;
+        overflow: hidden;
+        font-family:Arial;
+    }
+    .index_link_a{
+      border-right:2px solid #f5f5f5;
+    }
+    .index_link_a img{
+      width:18px; 
+      margin: 8px 2px 0 15px;
+      float:left;
+    }
+.index_link_a span{
+  float:left; 
+  line-height: 36px;
+  font-size: 12px;
+}
+.pay_select{
+    display:block;
+    border: 1px solid #e6e6e6;
+    margin: 6px auto;
+    width: 90%;
+    font-size: 14px;
+    padding:3px 5px;
+    border-radius: 5px;
+  }
+  .liaochengbox{
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  box-shadow:-4px 0 10px #eeeeee, /*左边阴影*/  
+  4px 0 10px #eeeeee, /*右边阴影*/  
+  0 -4px 10px #eeeeee, /*顶部阴影*/  
+  0 4px 10px #eeeeee; /*底边阴影*/ 
+}
+.liaochengbox p{
+    font-size: 14px;
+}
+}
+
+
+
+
+

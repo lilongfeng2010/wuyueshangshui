@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="graybackground">#F6F6F6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="wechat_login_button">#0090D7</color>
+    <color name="font_6">#666666</color>
+    <color name="font_green">#ff3bbd79</color>
+    <color name="addjob_radio_text_gray">#ffcccccc</color>
+    <color name="gray_text">#999999</color>
+    <color name="gray_pressed">#ffd5d5d5</color>
+    <color name="radio_button_off">#466A82</color>
+    <color name="red">#ff0000</color>
+</resources>

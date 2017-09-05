@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wuyueshangshui.yuanxinkangfu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".mainactivity.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_logo"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".mainactivity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainactivity.BaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainactivity.SplashActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginMainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.WeChatLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.mainPager.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.PersonInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.SettingIdentifyCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.SettingPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.order.OrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.order.ServiceObjectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.order.ServiceCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.SettingPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.SettingNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.SettingProfessionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.MyFamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.SettingFamilyNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.SettingFamilyAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.HealthyDocumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mainUI.fragment.mine.RecureReportActivity"
+            android:screenOrientation="portrait"/>
+        <provider
+            android:authorities="com.wuyueshangshui.yuanxinkangfu.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                />
+        </provider>
+    </application>
+
+</manifest>
