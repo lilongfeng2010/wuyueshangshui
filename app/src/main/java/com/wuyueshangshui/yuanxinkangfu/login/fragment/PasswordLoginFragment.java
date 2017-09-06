@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -207,6 +208,8 @@ public class PasswordLoginFragment extends Fragment {
                 startActivity(toMainActivity);
                 getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 ActivityCollector.finishAll();
+
+
                 ToastUtils.Toast(getActivity(),"登录成功");
             }else{
                 DialogUtils.onePosition(getActivity(),head.optString(Constant.text));

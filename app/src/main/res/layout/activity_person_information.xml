@@ -86,6 +86,7 @@
                 app:itemTitle2="职业:" />
 
             <com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem2
+                android:clickable="true"
                 android:id="@+id/bind_wechat_setting"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/listitem2_height"

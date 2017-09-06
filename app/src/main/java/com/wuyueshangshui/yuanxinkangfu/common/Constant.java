@@ -40,6 +40,9 @@ public class Constant {
     public static final String phone="phone";
     public static final String birthday="birthday";
     public static final String gender="gender";
+    public static final String info="info";
+    public static final String nickname="nickname";
+    public static final String isStartWechat="isStartWechat";
 
     public static final String outputImage_uri="com.wuyueshangshui.yuanxinkangfu.fileprovider";
 

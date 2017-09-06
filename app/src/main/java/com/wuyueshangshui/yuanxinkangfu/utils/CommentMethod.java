@@ -50,5 +50,11 @@ public class CommentMethod {
         if (!TextUtils.isEmpty(user.getGender() + "")) {
             SPUtils.setString(context, Constant.gender, user.getGender() + "");
         }
+        if (root.optJSONObject(Constant.body).optJSONObject(Constant.wx_user)!=null){
+            String wxData=root.optJSONObject(Constant.body).optJSONObject(Constant.wx_user).optString(Constant.info).replace("//","");
+            WXUserBean wxUserBean=gson.fromJson(wxData,WXUserBean.class);
+            SPUtils.setString(context,Constant.nickname,wxUserBean.getNickname());
+            LogUtils.showe("====微信数据="+wxData);
+        }
     }
 }

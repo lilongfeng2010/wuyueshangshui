@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.CalendarContract;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
@@ -42,8 +43,9 @@ import com.wuyueshangshui.yuanxinkangfu.common.GlobalURL;
 import com.wuyueshangshui.yuanxinkangfu.login.LoginMainActivity;
 import com.wuyueshangshui.yuanxinkangfu.mainactivity.BaseActivity;
 import com.wuyueshangshui.yuanxinkangfu.mainactivity.MyApplication;
+import com.wuyueshangshui.yuanxinkangfu.utils.Images.GetPhotoManager;
+import com.wuyueshangshui.yuanxinkangfu.utils.Images.ImageManager;
 import com.wuyueshangshui.yuanxinkangfu.utils.Images.ImageUtils;
-import com.wuyueshangshui.yuanxinkangfu.utils.Images.URIUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.MyCallBack;
 import com.wuyueshangshui.yuanxinkangfu.utils.SPUtils;
@@ -93,7 +95,8 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
     private TextView wechat_name;
     private TextView sex;
     private TextView age;
-
+    private static String strImgPath;
+    private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,6 +157,10 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
         name.setText(SPUtils.getString(this,Constant.real_name,null));
         identify_card.setText(SPUtils.getString(this,Constant.identify_card_num,null));
         profession.setText(SPUtils.getString(this,Constant.job,null));
+
+        if(SPUtils.getString(this,Constant.nickname,null)!=null){
+            wechat_name.setText(SPUtils.getString(this,Constant.nickname,null));
+        }
     }
     private void initListener() {
         headImageItem.setOnClickListener(this);
@@ -161,7 +168,10 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
         nameItem.setOnClickListener(this);//点击姓名的条目
         identify_cardItem.setOnClickListener(this);//点击身份证的条目
         professionItem.setOnClickListener(this);//点击职业的条目
-        bind_wechatItem.setOnClickListener(this);
+        //如果绑定过了微信，就不能再进行绑定了
+        if(SPUtils.getString(this,Constant.nickname,null)==null){
+            bind_wechatItem.setOnClickListener(this);//点击进入绑定微信
+        }
         passwordItem.setOnClickListener(this);//点击修改密码的条目
         exit.setOnClickListener(this);//点击退出登录
     }
@@ -211,6 +221,7 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
                 StartAnimation();
                 break;
             case R.id.bind_wechat_setting:
+                SPUtils.setBoolean(this,Constant.isStartWechat,true);
                 //绑定微信
                 if (!MyApplication.api.isWXAppInstalled()){
                     Toast.makeText(this, "您还未安装微信客户端", Toast.LENGTH_SHORT).show();
@@ -273,7 +284,6 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
     private void StartAblum() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-
         }else{
             openAblum();
         }
@@ -319,7 +329,10 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
         Intent intent=new Intent("android.media.action.IMAGE_CAPTURE");
         intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
         startActivityForResult(intent,TAKE_PHOTO);
+
     }
+
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -350,15 +363,38 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
                 profession.setText(data.getStringExtra(Constant.job));
             }
         }else if (requestCode==TAKE_PHOTO && resultCode==RESULT_OK){
-//            try {
-//                Bitmap bitmap= BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-//                head_image.setImageBitmap(bitmap);
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            }
-//            uploadHeadImage(imageUri.getPath());
-//            uploadHeadImage(URIUtils.getRealFilePath(this,imageUri));
-//            uploadHeadImage(URIUtils.getImageAbsolutePath(this,imageUri));
+
+            //拍照返回的照片数据
+            try {
+                bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+
+                String bitmap2=ImageUtils.bitmapToString2(bitmap);
+                String encryptData= DES.encrypt(gson.toJson(SendHeadImageBean2(bitmap2)));
+                OkHttpUtils.postString().url(GlobalURL.BaseURL)
+                        .content(encryptData)
+                        .mediaType(MediaType.parse("application/json;charset=utf-8"))
+                        .build()
+                        .execute(new MyCallBack() {
+                            @Override
+                            public void onError(Call call, Exception e, int id) {
+                                LogUtils.showe("=====设置头像的返回值fail======"+e);
+                            }
+                            @Override
+                            public void onResponse(String response, int id) {
+                                String decryptData=DES.decrypt(response);
+                                LogUtils.showe("=====设置头像的返回值success======"+decryptData);
+                                returnData2(decryptData);
+
+                            }
+                        });
+
+
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+
         }else if(requestCode==ABLUM && resultCode==RESULT_OK){
             //判断手机系统版本号
             if (Build.VERSION.SDK_INT>=19){
@@ -371,6 +407,7 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
         }
 
     }
+
 
     private void setAgeAndSex() {
         switch (SPUtils.getString(this,Constant.gender,"0")){
@@ -432,6 +469,7 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
     }
 
     private void uploadHeadImage(String imagePath) {
+        LogUtils.showe("======选择图片的绝对路径====="+imagePath);
        ToastUtils.showLoadingToast(this);
         String encryptData= DES.encrypt(gson.toJson(SendHeadImageBean(imagePath)));
         OkHttpUtils.postString().url(GlobalURL.BaseURL)
@@ -472,7 +510,23 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
             e.printStackTrace();
         }
     }
-
+    private void returnData2(String decryptData) {
+        try {
+            JSONObject origin = new JSONObject(decryptData);
+            JSONObject root=origin.optJSONObject(Constant.root);
+            JSONObject head=root.optJSONObject(Constant.head);
+            ToastUtils.dismissLoadingToast();
+            if (head.optInt(Constant.code)==0){
+                ToastUtils.Toast(this,"修改成功");
+                head_image.setImageBitmap(bitmap);
+                SPUtils.setString(this,Constant.wechat_headimg_url,root.optJSONObject(Constant.body).optString(Constant.avatar));
+            }else{
+                ToastUtils.Toast(this,head.optString(Constant.text));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     private Object SendHeadImageBean(String imagePath) {
         String smallImageData=ImageUtils.bitmapToString(imagePath);
         SendOriginBean origin=new SendOriginBean();
@@ -490,7 +544,22 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
         origin.setRoot(root);
         return origin;
     }
-
+    private Object SendHeadImageBean2(String data) {
+        SendOriginBean origin=new SendOriginBean();
+        SendRootBean root=new SendRootBean();
+        SendHeadBean head=new SendHeadBean();
+        SendBodyBean body=new SendBodyBean();
+        head.setClientid(Constant.clientid);
+        head.setAction(117);
+        head.setTimestamp(System.currentTimeMillis()+"");
+        body.setUser_id(SPUtils.getString(this,Constant.user_id,null));
+        body.setType(7);
+        body.setAvatar(data);
+        root.setHead(head);
+        root.setBody(body);
+        origin.setRoot(root);
+        return origin;
+    }
     private String getImagePath(Uri uri,String selection){
         String path=null;
         //通过Uri和selection来获取真实的图片路径

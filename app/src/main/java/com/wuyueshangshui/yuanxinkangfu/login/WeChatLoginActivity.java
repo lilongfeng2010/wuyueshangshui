@@ -190,10 +190,8 @@ public class WeChatLoginActivity extends BaseActivity {
 
                         }
                     });
-
         }
     }
-
     private void LoginReturnData(String decryptData) {
         try {
             JSONObject origin=new JSONObject(decryptData);
@@ -215,10 +213,16 @@ public class WeChatLoginActivity extends BaseActivity {
                         SPUtils.setString(this,Constant.wechat_unionid,unionid);
                     }
                 }
-                CommentMethod.loginSPUtils(root,gson,this);
-                Intent toMainIntent=new Intent(this,MainActivity.class);
-                startActivity(toMainIntent);
-                ActivityCollector.finishAll();
+                if (SPUtils.getBoolean(this,Constant.isStartWechat,false)){
+                    finish();
+                    ToastUtils.Toast(this,"绑定成功");
+                }else{
+                    CommentMethod.loginSPUtils(root,gson,this);
+                    Intent toMainIntent=new Intent(this,MainActivity.class);
+                    startActivity(toMainIntent);
+                    ActivityCollector.finishAll();
+                }
+
 
             }else{
                 ToastUtils.Toast(this,head.optString(Constant.text));

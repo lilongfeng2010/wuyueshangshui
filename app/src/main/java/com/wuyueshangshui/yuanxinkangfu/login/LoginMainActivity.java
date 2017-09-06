@@ -9,9 +9,12 @@ import android.widget.Toast;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.wuyueshangshui.yuanxinkangfu.R;
+import com.wuyueshangshui.yuanxinkangfu.common.Constant;
 import com.wuyueshangshui.yuanxinkangfu.mainactivity.BaseActivity;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
+import com.wuyueshangshui.yuanxinkangfu.mainactivity.MainActivity;
 import com.wuyueshangshui.yuanxinkangfu.mainactivity.MyApplication;
+import com.wuyueshangshui.yuanxinkangfu.utils.SPUtils;
 
 /**
  * 登录注册页面
@@ -25,6 +28,11 @@ public class LoginMainActivity extends BaseActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_main);
+        //如果有useid，就直接登录主页面
+        if (SPUtils.getString(this, Constant.user_id,null)!=null){
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
         initView();
 
