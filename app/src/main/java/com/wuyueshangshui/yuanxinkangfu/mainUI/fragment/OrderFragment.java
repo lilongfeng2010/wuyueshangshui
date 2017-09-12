@@ -1,6 +1,8 @@
 package com.wuyueshangshui.yuanxinkangfu.mainUI.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -60,10 +62,16 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
     private int page=0;//分页号
     private List<GetOrderAppoints> appointLists;//返回的数据的集合
     private boolean firstEnterRefresh=true;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LogUtils.showe("===当前的fragment的初始化==two=");
+    }
+
     @Override
     protected View initView() {
         EventBus.getDefault().register(this);
-
         view = View.inflate(mContext, R.layout.fragment_order,null);
         view.findViewById(R.id.all_back).setVisibility(View.INVISIBLE);
         ((TextView)view.findViewById(R.id.all_title_text)).setText("预约");
@@ -74,12 +82,12 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
         recyclerView = (RecyclerView) view.findViewById(R.id.order_recycler);
 
         //recyclerview的使用
-        LinearLayoutManager manager=new LinearLayoutManager(getActivity());
+        LinearLayoutManager manager=new LinearLayoutManager(mActivity);
         recyclerView.setLayoutManager(manager);
         refreshLayout = (RefreshLayout) view.findViewById(R.id.smartRefresh);
         //数据载体
         appointLists=new ArrayList<>();
-        mAdapter = new OrderFragmentAdapter(getActivity(),appointLists);
+        mAdapter = new OrderFragmentAdapter(mActivity,appointLists);
         recyclerView.setAdapter(mAdapter);
         //是否自动刷新控件
         refreshLayout.setEnableAutoLoadmore(true);
@@ -141,7 +149,7 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
                         if (origin.getRoot().getHead().getCode()==0){
                             if (origin.getRoot().getBody().getAppoints().size()==0){
                                 //当数据为0条时候，提示用户
-                                ToastUtils.Toast(getActivity(),"没有数据了，别扯了");
+                                ToastUtils.Toast(mActivity,"没有数据了，别扯了");
                             }else{
                                 //当有数据时候，判断此时的page数增加了没有，增加了说明是上拉加载，没有增加说明是下拉刷新.
                                 if (page==0){
@@ -165,7 +173,7 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
         head.setClientid(Constant.clientid);
         head.setAction(112);
         head.setTimestamp(System.currentTimeMillis()+"");
-        body.setUser_id(SPUtils.getString(getActivity(),Constant.user_id,null));
+        body.setUser_id(SPUtils.getString(mActivity,Constant.user_id,null));
         body.setPage(page+"");
         root.setHead(head);
         root.setBody(body);
@@ -177,8 +185,8 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.all_right_image:
-                startActivity(new Intent(getActivity(), OrderActivity.class));
-                getActivity().overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+                startActivity(new Intent(mActivity, OrderActivity.class));
+                mActivity.overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 break;
         }
     }
@@ -214,9 +222,6 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
                     public void onResponse(String response, int id) {
                         String decryptData= DES.decrypt(response);
                         LogUtils.showe("======取消预约success======="+decryptData);
-
-
-
                         //取消成功后要刷新列表
                        initData();
                     }

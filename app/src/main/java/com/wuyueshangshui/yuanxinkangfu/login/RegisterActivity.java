@@ -24,8 +24,8 @@ import com.wuyueshangshui.yuanxinkangfu.utils.InputCheck;
 import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.CheckNet;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.MyCallBack;
+import com.wuyueshangshui.yuanxinkangfu.utils.NiceDialog.ConfirmDialog;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.ToastUtils;
-import com.wuyueshangshui.yuanxinkangfu.utils.dialog.DialogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.encrypt.DES;
 import com.wuyueshangshui.yuanxinkangfu.wigdet.ActivityCollector;
 import com.wuyueshangshui.yuanxinkangfu.wigdet.TimeCount;
@@ -148,7 +148,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private void getCheckNumberMethod() {
         //手机号不能为空
         if (TextUtils.isEmpty(phone.getText().toString())){
-            DialogUtils.onePosition(RegisterActivity.this,getResources().getString(R.string.phone_is_not_empty));
+//            DialogUtils.onePosition(RegisterActivity.this,getResources().getString(R.string.phone_is_not_empty));
+            ConfirmDialog.newInstance()
+                    .setMessage(getResources().getString(R.string.phone_is_not_empty))
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getSupportFragmentManager());
+
             return;
         }
         //校验手机号

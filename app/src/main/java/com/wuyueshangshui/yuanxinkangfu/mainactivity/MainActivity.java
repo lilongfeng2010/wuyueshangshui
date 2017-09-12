@@ -28,21 +28,78 @@ public class MainActivity extends BaseActivity {
     private RadioGroup mRadioGroup;
     private int position;//当前选中的位置
     private BaseFragment mFragment;//刚显示的Fragment
+    private FragmentTransaction transaction;
+    private MainPagerFragment oneFragment;
+    private OrderFragment twoFrgment;
+    private MineFragment threeFragment;
+    private String fragmentTag1="MainPagerFragment";
+    private String fragmentTag2="OrderFragment";
+    private String fragmentTag3="MineFragment";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        initFragmentContent();
+
         initView();
 
-        initData();
+//        initData();
 
         setListener();
+
+
     }
 
-    private void setListener() {
-        mRadioGroup.setOnCheckedChangeListener(new MyOnCheckedChangeListener());
-        mRadioGroup.check(R.id.main_icon_1);
+    private void initFragmentContent() {
+        FragmentManager fm = getSupportFragmentManager();
+        //2.开启事务
+        transaction = fm.beginTransaction();
+    }
+
+    public void onCheckedChanged(int checkId){
+        FragmentManager fm=getSupportFragmentManager();
+        FragmentTransaction ft=fm.beginTransaction();
+        Fragment fragment1=fm.findFragmentByTag(fragmentTag1);
+        Fragment fragment2=fm.findFragmentByTag(fragmentTag2);
+        Fragment fragment3=fm.findFragmentByTag(fragmentTag3);
+        if (fragment1!=null){
+            ft.hide(fragment1);
+        }
+        if (fragment2!=null){
+            ft.hide(fragment2);
+        }
+        if (fragment3!=null){
+            ft.hide(fragment3);
+        }
+        switch (checkId){
+            case R.id.main_icon_1:
+                if (fragment1==null){
+                    fragment1=new MainPagerFragment();
+                    ft.add(R.id.activity_main_container,fragment1,fragmentTag1);
+                }else{
+                    ft.show(fragment1);
+                }
+                break;
+            case R.id.main_icon_3:
+                if (fragment2==null){
+                    fragment2=new OrderFragment();
+                    ft.add(R.id.activity_main_container,fragment2,fragmentTag2);
+                }else{
+                    ft.show(fragment2);
+                }
+                break;
+            case R.id.main_icon_5:
+                if (fragment3==null){
+                    fragment3=new MineFragment();
+                    ft.add(R.id.activity_main_container,fragment3,fragmentTag3);
+                }else{
+                    ft.show(fragment3);
+                }
+                break;
+        }
+        ft.commit();
+
     }
 
     private void initData() {
@@ -50,6 +107,12 @@ public class MainActivity extends BaseActivity {
         mBaseFragments.add(new MainPagerFragment());
         mBaseFragments.add(new OrderFragment());
         mBaseFragments.add(new MineFragment());
+
+    }
+
+    private void setListener() {
+        mRadioGroup.setOnCheckedChangeListener(new MyOnCheckedChangeListener());
+        mRadioGroup.check(R.id.main_icon_1);
     }
 
     private void initView() {
@@ -60,27 +123,93 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
+            FragmentManager fm=getSupportFragmentManager();
+            FragmentTransaction ft=fm.beginTransaction();
+            Fragment fragment1=fm.findFragmentByTag(fragmentTag1);
+            Fragment fragment2=fm.findFragmentByTag(fragmentTag2);
+            Fragment fragment3=fm.findFragmentByTag(fragmentTag3);
+            if (fragment1!=null){
+                ft.hide(fragment1);
+            }
+            if (fragment2!=null){
+                ft.hide(fragment2);
+            }
+            if (fragment3!=null){
+                ft.hide(fragment3);
+            }
             switch (checkedId){
                 case R.id.main_icon_1:
-                    position = 0;
+                    if (fragment1==null){
+                        fragment1=new MainPagerFragment();
+                        ft.add(R.id.activity_main_container,fragment1,fragmentTag1);
+                    }else{
+                        ft.show(fragment1);
+                    }
                     break;
                 case R.id.main_icon_3:
+                    if (fragment2==null){
+                        fragment2=new OrderFragment();
+                        ft.add(R.id.activity_main_container,fragment2,fragmentTag2);
+                    }else{
+                        ft.show(fragment2);
+                    }
+                    break;
+                case R.id.main_icon_5:
+                    if (fragment3==null){
+                        fragment3=new MineFragment();
+                        ft.add(R.id.activity_main_container,fragment3,fragmentTag3);
+                    }else{
+                        ft.show(fragment3);
+                    }
+                    break;
+            }
+            ft.commit();
+            /*switch (checkedId){
+                case R.id.main_icon_1:
+//                    if(oneFragment==null){
+//                        oneFragment=new MainPagerFragment();
+//                        transaction.add(R.id.activity_main_container,oneFragment);
+//                    }else{
+//                        transaction.show(oneFragment);
+//                    }
+
+                    position = 0;
+
+                    break;
+                case R.id.main_icon_3:
+//                    if(twoFrgment==null){
+//                        twoFrgment=new OrderFragment();
+//                        transaction.add(R.id.activity_main_container,twoFrgment);
+//                    }else{
+//                        transaction.show(twoFrgment);
+//                    }
+
+
                     position=1;
                     break;
                 case R.id.main_icon_5:
+//                    if(threeFragment==null){
+//                        threeFragment=new MineFragment();
+//                        transaction.add(R.id.activity_main_container,threeFragment);
+//                    }else{
+//                        transaction.show(threeFragment);
+//                    }
                     position=2;
                     break;
                 default:
                     position=0;
                     break;
             }
-            //根据位置得到对应的Fragment
+//            根据位置得到对应的Fragment
             BaseFragment currentFragment=getFragment();
-            //替换fragment
-//            replaceFragment(mFragment,currentFragment);
             replaceFragment(currentFragment);
+//            transaction.commit();*/
         }
     }
+
+
+
+
     /**
      *
      * @param lastFragment

@@ -26,6 +26,7 @@ import com.wuyueshangshui.yuanxinkangfu.utils.DateUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.CheckNet;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.MyCallBack;
+import com.wuyueshangshui.yuanxinkangfu.utils.NiceDialog.ConfirmDialog;
 import com.wuyueshangshui.yuanxinkangfu.utils.SPUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.ToastUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.DialogUtils;
@@ -167,15 +168,30 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener 
     private void completeSubmit() {
         //检查需要填写的项填写完毕没有
         if (TextUtils.isEmpty(service_object_content.getText().toString())){
-            DialogUtils.onePosition(this,"请先选择服务对象(=^ ^=)");
+//            DialogUtils.onePosition(this,"请先选择服务对象(=^ ^=)");
+            ConfirmDialog.newInstance()
+                    .setMessage("请先选择服务对象")
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getSupportFragmentManager());
             return;
         }
         if(TextUtils.isEmpty(service_object_time.getText().toString())){
-            DialogUtils.onePosition(this,"请先选择预约时间(=^ ^=)");
+//            DialogUtils.onePosition(this,"请先选择预约时间(=^ ^=)");
+            ConfirmDialog.newInstance()
+                    .setMessage("请先选择预约时间")
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getSupportFragmentManager());
             return;
         }
         if(TextUtils.isEmpty(service_center_name.getText().toString())){
-            DialogUtils.onePosition(this,"请先选择服务中心(=^ ^=)");
+//            DialogUtils.onePosition(this,"请先选择服务中心(=^ ^=)");
+            ConfirmDialog.newInstance()
+                    .setMessage("请先选择服务中心")
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getSupportFragmentManager());
             return;
         }
         //检查网络是否连接

@@ -14,10 +14,19 @@ android {
     buildTypes {
         release {
             debuggable true
-            minifyEnabled false
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -35,6 +44,5 @@ dependencies {
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     testCompile 'junit:junit:4.12'
 }

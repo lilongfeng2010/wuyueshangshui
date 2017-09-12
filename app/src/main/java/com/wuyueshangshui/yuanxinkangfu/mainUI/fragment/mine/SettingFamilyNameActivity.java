@@ -22,6 +22,7 @@ import com.wuyueshangshui.yuanxinkangfu.common.GlobalURL;
 import com.wuyueshangshui.yuanxinkangfu.mainactivity.BaseActivity;
 import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.MyCallBack;
+import com.wuyueshangshui.yuanxinkangfu.utils.NiceDialog.ConfirmDialog;
 import com.wuyueshangshui.yuanxinkangfu.utils.SPUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.DialogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.ToastUtils;
@@ -117,11 +118,19 @@ public class SettingFamilyNameActivity extends BaseActivity implements View.OnCl
     //提交信息
     private void submitData() {
         if (TextUtils.isEmpty(familyName.getText().toString())){
-            ToastUtils.Toast(this,"请输入新名称");
+            ConfirmDialog.newInstance()
+                    .setMessage("请输入新名称")
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getSupportFragmentManager());
             return;
         }
         if (familyName.getText().toString().equals(family_name)){
-            DialogUtils.onePosition(this,"名称没有修改");
+            ConfirmDialog.newInstance()
+                    .setMessage("名称没有修改")
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getSupportFragmentManager());
             return;
         }
         String encryptData= DES.encrypt(gson.toJson(getChangeFamilyNameBean()));

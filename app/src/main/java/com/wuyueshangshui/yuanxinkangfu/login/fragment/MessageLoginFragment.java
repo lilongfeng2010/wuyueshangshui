@@ -32,6 +32,7 @@ import com.wuyueshangshui.yuanxinkangfu.utils.InputCheck;
 import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.CheckNet;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.MyCallBack;
+import com.wuyueshangshui.yuanxinkangfu.utils.NiceDialog.ConfirmDialog;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.ToastUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.DialogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.encrypt.DES;
@@ -207,7 +208,7 @@ public class MessageLoginFragment extends Fragment {
                                     ActivityCollector.finishAll();
                                     ToastUtils.Toast(getActivity(),"登录成功");
                                 }else{
-                                    DialogUtils.onePosition(getActivity(),head.optString(Constant.text));
+                                    ToastUtils.Toast(getActivity(),head.optString(Constant.text));
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -221,7 +222,12 @@ public class MessageLoginFragment extends Fragment {
     private void getCheckNumMethod() {
         //手机号不能为空
         if (TextUtils.isEmpty(phone.getText().toString())){
-            DialogUtils.onePosition(getActivity(),getResources().getString(R.string.phone_is_not_empty));
+//            DialogUtils.onePosition(getActivity(),getResources().getString(R.string.phone_is_not_empty));
+            ConfirmDialog.newInstance()
+                    .setMessage(getResources().getString(R.string.phone_is_not_empty))
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getActivity().getSupportFragmentManager());
             return;
         }
         //校验手机号

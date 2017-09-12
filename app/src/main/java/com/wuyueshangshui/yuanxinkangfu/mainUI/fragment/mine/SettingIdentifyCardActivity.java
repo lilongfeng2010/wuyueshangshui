@@ -1,8 +1,6 @@
 package com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine;
 
 import android.content.Intent;
-import android.support.constraint.solver.widgets.ConstraintAnchor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;

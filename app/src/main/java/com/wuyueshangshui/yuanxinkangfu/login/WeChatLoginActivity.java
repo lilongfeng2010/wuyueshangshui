@@ -31,6 +31,7 @@ import com.wuyueshangshui.yuanxinkangfu.utils.InputCheck;
 import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.CheckNet;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.MyCallBack;
+import com.wuyueshangshui.yuanxinkangfu.utils.NiceDialog.ConfirmDialog;
 import com.wuyueshangshui.yuanxinkangfu.utils.SPUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.ToastUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.DialogUtils;
@@ -235,7 +236,12 @@ public class WeChatLoginActivity extends BaseActivity {
     private void getCheckNumMethod() {
         //手机号不能为空
         if (TextUtils.isEmpty(phone.getText().toString())){
-            DialogUtils.onePosition(WeChatLoginActivity.this,getResources().getString(R.string.phone_is_not_empty));
+//            DialogUtils.onePosition(WeChatLoginActivity.this,getResources().getString(R.string.phone_is_not_empty));
+            ConfirmDialog.newInstance()
+                    .setMessage(getResources().getString(R.string.phone_is_not_empty))
+                    .setMargin(60)
+                    .setOutCancel(false)
+                    .show(getSupportFragmentManager());
             return;
         }
         //校验手机号

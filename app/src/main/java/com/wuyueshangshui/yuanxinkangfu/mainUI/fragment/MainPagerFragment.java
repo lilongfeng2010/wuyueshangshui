@@ -25,6 +25,12 @@ public class MainPagerFragment extends BaseFragment {
     private ContentLoadingProgressBar progressBar;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LogUtils.showe("===当前的fragment的初始化==one=");
+    }
+
+    @Override
     protected View initView() {
         view = View.inflate(mContext, R.layout.fragment_mainpager,null);
         webView = (WebView) view.findViewById(R.id.mainpagerWebView);
@@ -65,11 +71,11 @@ public class MainPagerFragment extends BaseFragment {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             LogUtils.showe("====拦截的url:"+url);
-            Intent toWebActivity=new Intent(getActivity(), WebViewActivity.class);
+            Intent toWebActivity=new Intent(mActivity, WebViewActivity.class);
             toWebActivity.putExtra(Constant.webview_url,url);
             startActivity(toWebActivity);
             //activity消失动画，新activity从右侧进入，旧activity从左侧退出
-            getActivity().overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+            mActivity.overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             return true;
         }
     };

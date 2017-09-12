@@ -10,12 +10,12 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.wuyueshangshui.yuanxinkangfu.EventBus.MineHeadImageBus;
 import com.wuyueshangshui.yuanxinkangfu.EventBus.MineNameBus;
-import com.wuyueshangshui.yuanxinkangfu.EventBus.OrderEventBus;
 import com.wuyueshangshui.yuanxinkangfu.R;
 import com.wuyueshangshui.yuanxinkangfu.common.Constant;
 import com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.HealthyDocumentActivity;
 import com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.MyFamilyActivity;
 import com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.mine.PersonInformationActivity;
+import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.SPUtils;
 import com.wuyueshangshui.yuanxinkangfu.wigdet.ListItem;
 
@@ -37,12 +37,18 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private TextView person_center_name;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LogUtils.showe("===当前的fragment的初始化=three==");
+    }
+
+    @Override
     protected View initView() {
         EventBus.getDefault().register(this);
 
         view = View.inflate(mContext, R.layout.fragment_mine,null);
         view.findViewById(R.id.all_back).setVisibility(View.INVISIBLE);
-        ((TextView)view.findViewById(R.id.all_title_text)).setText(getActivity().getResources().getString(R.string.person_center));
+        ((TextView)view.findViewById(R.id.all_title_text)).setText(mActivity.getResources().getString(R.string.person_center));
         //圆形头像控件
         person_center_imageview = (CircleImageView) view.findViewById(R.id.person_center_imageview);
         person_center_name = (TextView) view.findViewById(R.id.person_center_name);
@@ -74,13 +80,13 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.person_information:
-                getActivity().startActivity(new Intent(getActivity(), PersonInformationActivity.class));
+                mActivity.startActivity(new Intent(mActivity, PersonInformationActivity.class));
                 break;
             case R.id.my_family:
-                getActivity().startActivity(new Intent(getActivity(), MyFamilyActivity.class));
+                mActivity.startActivity(new Intent(mActivity, MyFamilyActivity.class));
                 break;
             case R.id.healthy_document:
-                getActivity().startActivity(new Intent(getActivity(), HealthyDocumentActivity.class));
+                mActivity.startActivity(new Intent(mActivity, HealthyDocumentActivity.class));
                 break;
         }
     }

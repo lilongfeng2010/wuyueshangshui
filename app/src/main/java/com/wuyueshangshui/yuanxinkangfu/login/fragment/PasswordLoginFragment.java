@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.wuyueshangshui.yuanxinkangfu.R;
@@ -170,7 +171,9 @@ public class PasswordLoginFragment extends Fragment {
                             .execute(new MyCallBack() {
                                 @Override
                                 public void onError(Call call, Exception e, int id) {
-                                    LogUtils.showe("===登录fail=="+e);
+                                    LogUtils.showe("===登录fail=="+e+"::");
+                                    CheckNet.ResponseError(getActivity(),e.getMessage().substring(e.getMessage().length()-3));
+//                                    Toast.makeText(getActivity(), "服务器出错", Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
@@ -208,11 +211,9 @@ public class PasswordLoginFragment extends Fragment {
                 startActivity(toMainActivity);
                 getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 ActivityCollector.finishAll();
-
-
                 ToastUtils.Toast(getActivity(),"登录成功");
             }else{
-                DialogUtils.onePosition(getActivity(),head.optString(Constant.text));
+                ToastUtils.Toast(getActivity(),head.optString(Constant.text));
             }
         } catch (JSONException e) {
             e.printStackTrace();
