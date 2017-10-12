@@ -162,6 +162,7 @@ public class PersonInformationActivity extends BaseActivity implements View.OnCl
             wechat_name.setText(SPUtils.getString(this,Constant.nickname,null));
         }
     }
+
     private void initListener() {
         headImageItem.setOnClickListener(this);
         mobileItem.setOnClickListener(this);//点击手机号的条目

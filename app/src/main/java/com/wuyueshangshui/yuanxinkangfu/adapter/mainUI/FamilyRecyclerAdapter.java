@@ -70,7 +70,11 @@ public class FamilyRecyclerAdapter extends RecyclerView.Adapter<FamilyRecyclerAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         //毕加索加载头像图片
-        Picasso.with(mContext).load(mAvatarLists.get(position)).placeholder(R.color.graybackground).error(R.color.graybackground).into(holder.imageview);
+        Picasso.with(mContext)
+                .load(mAvatarLists.get(position))
+                .placeholder(R.color.graybackground)
+                .error(R.color.graybackground)
+                .into(holder.imageview);
         holder.name.setText(mRealNameLists.get(position));
         //这两行方法是为了把点击事件传到外面去
         holder.imageview.setTag(position);

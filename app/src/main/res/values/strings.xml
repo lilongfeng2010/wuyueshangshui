@@ -50,4 +50,8 @@
     <string name="profession_06">生产、运输设备操作者</string>
     <string name="profession_07">军人</string>
     <string name="profession_08">其他</string>
+
+
+    <string name="network_info_on">网络已经连接</string>
+    <string name="network_info_off">网络已经断开</string>
 </resources>

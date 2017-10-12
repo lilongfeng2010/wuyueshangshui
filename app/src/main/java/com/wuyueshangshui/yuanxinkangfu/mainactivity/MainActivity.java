@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.RadioGroup;
 
 import com.wuyueshangshui.yuanxinkangfu.R;
@@ -269,5 +270,12 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode==KeyEvent.KEYCODE_BACK){
+            moveTaskToBack(true);//不退出程序，进入后台
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
