@@ -30,11 +30,9 @@ import com.wuyueshangshui.yuanxinkangfu.mainUI.fragment.order.OrderActivity;
 import com.wuyueshangshui.yuanxinkangfu.utils.LogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.Net.MyCallBack;
 import com.wuyueshangshui.yuanxinkangfu.utils.SPUtils;
-import com.wuyueshangshui.yuanxinkangfu.utils.dialog.DialogUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.dialog.ToastUtils;
 import com.wuyueshangshui.yuanxinkangfu.utils.encrypt.DES;
 import com.zhy.http.okhttp.OkHttpUtils;
-
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -138,6 +136,7 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         LogUtils.showe("=====服务对象的返回值fail======"+e);
+
                     }
 
                     @Override
@@ -174,6 +173,7 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
         head.setAction(112);
         head.setTimestamp(System.currentTimeMillis()+"");
         body.setUser_id(SPUtils.getString(mActivity,Constant.user_id,null));
+        LogUtils.showe("userID"+SPUtils.getString(mActivity,Constant.user_id,null));
         body.setPage(page+"");
         root.setHead(head);
         root.setBody(body);
